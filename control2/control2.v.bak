@@ -1,0 +1,146 @@
+module control2(go, restn, clock, KEY, ld_x, ld_y, ld_c);
+    input go, restn, KEY;
+    output ld_x1,ld_x2,ld_x3,ld_x4,ld_x5,ld_x6,ld_x7,ld_x8,ld_x9,
+           ld_y1,ld_y2,ld_y3,ld_y4,ld_y5,ld_y6,ld_y7,ld_y8,ld_y9,
+           ld_c1,ld_c2,ld_c3,ld_c4,ld_c5,ld_c6,ld_c7,ld_c8,ld_c9;
+
+    reg[4:0] current_state, next_state;
+
+    localparam  load_pos1 = 5'd0,
+    			load_pos1_wait = 5'd1,
+    			load_pos2 = 5'd2,
+    			load_pos2_wait = 5'd3,
+    			load_pos3 = 5'd4,
+    			load_pos3_wait = 5'd5,
+    			load_pos4 = 5'd6,
+    			load_pos4_wait = 5'd7,
+    			load_pos5 = 5'd8,
+    			load_pos5_wait = 5'd9,
+    			load_pos6 = 5'd10,
+    			load_pos6_wait  = 5'd11,
+    			load_pos7 = 5'd12,
+    			load_pos7_wait = 5'd13,
+    			load_pos8 = 5'd14,
+    			load_pos8_wait = 5'd15,
+    			load_pos9 = 5'd16,
+    			load_pos9_wait = 5'd17,
+    			S_CYCLE_0 = 5'd18;
+
+    always (*)
+    begin: state_table
+        case (current_state)
+            // state 1, position 1
+            load_pos1: next_state = go ? load_pos1_wait : load_pos1;
+            load_pos1_wait: next_state = go ? load_pos1_wait : load_pos2;
+
+            //state2, pos2
+            load_pos2: next_state = go ? load_pos2_wait : laod_pos2;
+            load_pos2_wait: next_state = go ? load_pos2_wait : load_pos3;
+
+			// state3, pos3 
+            load_pos3: next_state = go ? load_pos3_wait : load_pos3;
+            load_pos3_wait: next_state = go? load_pos3_wait: load_pos4;
+
+            //state4, pos4
+            load_pos4: next_state = go ? load_pos4_wait : load_pos4;
+            load_pos4_wait: next_state = go ? load_pos4_wait : load_pos5;
+
+            //state5, pos5
+            load_pos5: next_state = go ? load_pos5_wait : load_pos5;
+            laod_pos5_wait : next_state = go ? load_pos5_wait : load_pos6;
+
+            // state6, pos6
+            laod_pos6: next_state = go ? load_pos6_wait : load_pos6;
+            load_pos6_wait: next_state = go ? load_pos6_wait : load_pos7;
+
+            // state7, pos7
+            laod_pos7: next_state = go ? load_pos7_wait : load_pos7;
+            load_pos7_wait: next_state = go ? load_pos7_wait : load_pos8;
+
+            // state8, pos8
+            laod_pos8: next_state = go ? load_pos8_wait : load_pos8;
+            load_pos8_wait: next_state = go ? load_pos8_wait : load_pos9;
+
+            // state9, pos9
+
+            laod_pos9: next_state = go ? load_pos9_wait : load_pos9;
+            load_pos6_wait: next_state = go ? load_pos9_wait : S_CYCLE_0;
+
+        default: next_state = load_pos1;
+
+        endcase
+     end
+
+
+
+     always @(*)
+     begin: enable_signals
+        // by default given all signal 0 
+        ld_x = 1'd0;
+        ld_y = 1'd0;
+        ld_c = 1'd0;
+
+        case(current_state)
+        	load_pos1:begin
+			    ld_x1 = 1'b1;
+			    ld_y1 = 1'b1;
+			    ld_c1 = 1'b1;
+			    end
+			laod_pos2:begin
+				ld_x2 =  1'b1;
+				ld_y2 =  1'b1;
+				ld_c2 =  1'b1;
+				end
+			laod_pos3:begin
+				ld_x3 =   1'b1;
+				ld_y3 =   1'b1;
+				ld_c3 =   1'b1;
+				end
+			laod_pos4:begin
+				ld_x4 =   1'b1;
+				ld_y4 =   1'b1;
+				ld_c4 =   1'b1;
+				end
+			laod_pos5:begin
+				ld_x5 =  1'b1;
+				ld_y5 =   1'b1;
+				ld_c5 =  1'b1;
+				end
+			laod_pos6:begin
+				ld_x6 =  1'b1;
+				ld_y6 =  1'b1;
+				ld_c6 =  1'b1;
+				end
+			laod_pos7:begin
+				ld_x7 =  1'b1;
+				ld_y7 =  1'b1;
+				ld_c7 =  1'b1;
+				end
+			laod_pos8:begin
+				ld_x8 =  1'b1;
+				ld_y8 =  1'b1;
+				ld_c8 =  1'b1;
+				end
+			laod_pos9:begin
+				ld_x9 =  1'b1;
+				ld_y9 =  1'b1;
+				ld_c9 =  1'b1;
+				end
+			S_CYCLE_0:begin
+				ld_x1 = 1'd1;
+				ld_y1 = 1'd1;
+				ld_c1 = 1'd1;
+				end
+
+        endcase 
+     end
+
+
+    begin: state_FFs
+    	if(!reset_n)
+            current_state <= load_pos1;
+        else
+            current_state <= next_state;
+      end 
+		
+ endmodule

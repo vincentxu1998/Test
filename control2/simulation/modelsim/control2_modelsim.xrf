@@ -1,0 +1,17 @@
+vendor_name = ModelSim
+source_file = 1, /h/u17/c6/01/xujiawe5/csc258_2/control2/control2.v
+source_file = 1, /h/u17/c6/01/xujiawe5/csc258_2/control2/db/control2.cbx.xml
+design_name = control2
+instance = comp, \ld_pos1~output , ld_pos1~output, control2, 1
+instance = comp, \ld_pos2~output , ld_pos2~output, control2, 1
+instance = comp, \ld_pos3~output , ld_pos3~output, control2, 1
+instance = comp, \ld_pos4~output , ld_pos4~output, control2, 1
+instance = comp, \ld_pos5~output , ld_pos5~output, control2, 1
+instance = comp, \ld_pos6~output , ld_pos6~output, control2, 1
+instance = comp, \ld_pos7~output , ld_pos7~output, control2, 1
+instance = comp, \ld_pos8~output , ld_pos8~output, control2, 1
+instance = comp, \ld_pos9~output , ld_pos9~output, control2, 1
+instance = comp, \restn~input , restn~input, control2, 1
+instance = comp, \clock~input , clock~input, control2, 1
+instance = comp, \go~input , go~input, control2, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, control2, 1

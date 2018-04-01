@@ -1,0 +1,21 @@
+
+State Machine - |control2|current_state
+Name current_state.load_pos9_wait current_state.load_pos9 current_state.load_pos8_wait current_state.load_pos8 current_state.load_pos7_wait current_state.load_pos7 current_state.load_pos6_wait current_state.load_pos6 current_state.load_pos5_wait current_state.load_pos5 current_state.load_pos4_wait current_state.load_pos4 current_state.load_pos3_wait current_state.load_pos3 current_state.load_pos2_wait current_state.load_pos2 current_state.load_pos1_wait current_state.load_pos1 
+current_state.load_pos1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+current_state.load_pos1_wait 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+current_state.load_pos2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+current_state.load_pos2_wait 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+current_state.load_pos3 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+current_state.load_pos3_wait 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+current_state.load_pos4 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+current_state.load_pos4_wait 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+current_state.load_pos5 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+current_state.load_pos5_wait 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+current_state.load_pos6 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+current_state.load_pos6_wait 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+current_state.load_pos7 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+current_state.load_pos7_wait 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+current_state.load_pos8 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+current_state.load_pos8_wait 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+current_state.load_pos9 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+current_state.load_pos9_wait 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

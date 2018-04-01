@@ -1,0 +1,55 @@
+|control2
+go => Selector1.IN2
+go => Selector3.IN1
+go => Selector5.IN1
+go => Selector7.IN1
+go => Selector9.IN1
+go => Selector11.IN1
+go => Selector13.IN1
+go => Selector15.IN1
+go => Selector17.IN1
+go => Selector8.IN1
+go => Selector10.IN1
+go => Selector12.IN1
+go => Selector14.IN1
+go => Selector16.IN1
+go => Selector6.IN1
+go => Selector4.IN1
+go => Selector2.IN1
+go => Selector0.IN1
+restn => ~NO_FANOUT~
+clock => clock.IN1
+ld_pos1 <= ld_pos1.DB_MAX_OUTPUT_PORT_TYPE
+ld_pos2 <= ld_pos2.DB_MAX_OUTPUT_PORT_TYPE
+ld_pos3 <= ld_pos3.DB_MAX_OUTPUT_PORT_TYPE
+ld_pos4 <= ld_pos4.DB_MAX_OUTPUT_PORT_TYPE
+ld_pos5 <= ld_pos5.DB_MAX_OUTPUT_PORT_TYPE
+ld_pos6 <= ld_pos6.DB_MAX_OUTPUT_PORT_TYPE
+ld_pos7 <= ld_pos7.DB_MAX_OUTPUT_PORT_TYPE
+ld_pos8 <= ld_pos8.DB_MAX_OUTPUT_PORT_TYPE
+ld_pos9 <= ld_pos9.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|control2|rate_counter1:m1
+clock => q[0]~reg0.CLK
+clock => q[1]~reg0.CLK
+clock => q[2]~reg0.CLK
+clock => q[3]~reg0.CLK
+clock => q[4]~reg0.CLK
+reset_n => q.OUTPUTSELECT
+reset_n => q.OUTPUTSELECT
+reset_n => q.OUTPUTSELECT
+reset_n => q.OUTPUTSELECT
+reset_n => q.OUTPUTSELECT
+enable => q.OUTPUTSELECT
+enable => q.OUTPUTSELECT
+enable => q.OUTPUTSELECT
+enable => q.OUTPUTSELECT
+enable => q.OUTPUTSELECT
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
