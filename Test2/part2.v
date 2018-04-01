@@ -189,7 +189,7 @@ module rate_counter1(clock,reset_n,enable,q);
 		always @(posedge clock)
 		begin
 			if(reset_n == 1'b0)
-				q <= 8'b1000000;
+				q <= 8'b10000000;
 			else if(enable ==1'b1)
 			begin
 			   if ( q == 8'd0 )
@@ -245,8 +245,7 @@ module control(go,reset_n,KEY,clock,enable,ld_x,ld_y,ld_c,plot);
         ld_x = 1'b0;
         ld_y = 1'b0;
         ld_c = 1'b0;
-		  enable = 1'b0;
-		  plot = 1'b0;
+        plot = 1'b0; 
 		  
 		  case(current_state)
 				S_LOAD_X:begin
